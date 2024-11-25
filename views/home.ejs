@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freaky Fashion</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">Freaky Fashion</a>
+            </div>
+            <div class="search-and-icons">
+                <div class="search">
+                    <input type="text" placeholder="Sök produkt">
+                </div>
+                <div class="icons">
+                    <a href="#" class="icon heart"><img src="/icons/heart.png" alt="Favoriter ikon"></a>
+                    <a href="#" class="icon cart"><img src="/icons/2169826.png" alt="Varukorg ikon"></a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Nyheter</a></li>
+                    <li><a href="#">Kategorier</a></li>
+                    <li><a href="#">Topplistan</a></li>
+                    <li><a href="#">Rea</a></li>
+                    <li><a href="#">Kampanjer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <img src="/images/force-majeure-SmIlY2uAHo8-unsplash.jpg" alt="Hero Image">
+            </div>
+            <div class="hero-content">
+                <h1>Hitta din unika stil</h1>
+                <p>Välj bland våra exklusiva plagg och skapa din unika look</p>
+            </div>
+        </section>
+        <section class="spots">
+            <a href="#" class="spot">
+                <img src="/images/force-majeure-00tlC0Clfrs-unsplash.jpg" alt="Hög mode bild">
+                <p>Hög mode</p>
+            </a>
+            <a href="#" class="spot">
+                <img src="/images/malicki-m-beser-PKMvkg7vnUo-unsplash.jpg" alt="Senaste trenderna bild">
+                <p>Senaste trenderna</p>
+            </a>
+            <a href="#" class="spot">
+                <img src="/images/tamara-bellis-IwVRO3TLjLc-unsplash.jpg" alt="Fin stil bild">
+                <p>Fin stil</p>
+            </a>
+        </section>
+        <h2 class="product-grid-title">Våra Produkter</h2>
+        <section class="product-grid" id="product-grid">
+            <% products.forEach(product => { %>
+                <a href="/products/<%= product.slug %>" class="product-card">
+                    <img src="<%= product.image %>" alt="<%= product.name %>">
+                    <div class="product-info">
+                        <div style="display: flex; width: 100%;">
+                            <h3><%= product.name %></h3>
+                            <span class="price"><%= product.price %></span>
+                        </div>
+                        <span class="brand">Levis</span>
+                    </div>
+                </a>
+            <% }); %>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <img src="/icons/planeticon.png" alt="Free shipping and returns">
+                <span>Gratis frakt och returer</span>
+            </div>
+            <div class="feature">
+                <img src="/icons/planeicon.png" alt="Express shipping">
+                <span>Expressfrakt</span>
+            </div>
+            <div class="feature">
+                <img src="/icons/protectionIcon.png" alt="Secure payments">
+                <span>Säkra betalningar</span>
+            </div>
+            <div class="feature">
+                <img src="/icons/smileyIcon.png" alt="Daily news">
+                <span>Nyheter varje dag</span>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-content">
+              <!-- Accordion mobile -->
+              <div class="accordion accordion-mobile" id="accordionFooter">
+                <!-- First Column -->
+                <div class="accordion-item">
+                  <input type="checkbox" id="footer-accordion-1" class="accordion-toggle">
+                  <label for="footer-accordion-1" class="accordion-header">Shopping</label>
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Vinterjackor</li>
+                      <li>Pufferjackor</li>
+                      <li>Kappa</li>
+                      <li>Trenchcoats</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Second Column -->
+                <div class="accordion-item">
+                  <input type="checkbox" id="footer-accordion-2" class="accordion-toggle">
+                  <label for="footer-accordion-2" class="accordion-header">Mina Sidor</label>
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Mina Ordrar</li>
+                      <li>Mitt Konto</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Third Column -->
+                <div class="accordion-item">
+                  <input type="checkbox" id="footer-accordion-3" class="accordion-toggle">
+                  <label for="footer-accordion-3" class="accordion-header">Kundtjänst</label>
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Returnpolicy</li>
+                      <li>Integritetspolicy</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- footer for larger devices -->
+              <div class="footer-content-desktop">
+                <div class="footer-column">
+                  <h4>Shopping</h4>
+                  <ul>
+                    <li>Vinterjackor</li>
+                    <li>Pufferjackor</li>
+                    <li>Kappa</li>
+                    <li>Trenchcoats</li>
+                  </ul>
+                </div>
+                <div class="footer-column">
+                  <h4>Mina Sidor</h4>
+                  <ul>
+                    <li>Mina Ordrar</li>
+                    <li>Mitt Konto</li>
+                  </ul>
+                </div>
+                <div class="footer-column">
+                  <h4>Kundtjänst</h4>
+                  <ul>
+                    <li>Returnpolicy</li>
+                    <li>Integritetspolicy</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="copyright">
+              © Freaky Fashion
+            </div>
+          </footer>
+          </main>
+    <script>
+        // Fetch products from the server and add them to the product section
+        fetch('/products')
+            .then(response => response.json())
+            .then(products => {
+                const productGrid = document.getElementById('product-grid');
+                products.forEach(product => {
+                    const productCard = document.createElement('a');
+                    productCard.className = 'product-card';
+                    productCard.href = `/products/${product.slug}`;
+                    productCard.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-info">
+                            <span class="product-name">${product.name}</span>
+                            <span class="product-price">${product.price}</span>
+                        </div>
+                        <span class="brand">${product.brand}</span>
+                        <img src="/icons/emptyheart.jpg" alt="Favorite" class="heart-icon">
+                    `;
+                    productGrid.appendChild(productCard);
+                });
+            });
+    </script>
+</body>
+</html>

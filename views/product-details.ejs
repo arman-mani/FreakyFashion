@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">Freaky Fashion</a>
+            </div>
+            <div class="search-and-icons">
+                <div class="search">
+                    <input type="text" placeholder="Sök produkt">
+                </div>
+                <div class="icons">
+                    <a href="#" class="icon heart"><img src="/icons/heart.png" alt="Favoriter"></a>
+                    <a href="#" class="icon cart"><img src="/icons/2169826.png" alt="Varukorg"></a>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Nyheter</a></li>
+                    <li><a href="#">Kategorier</a></li>
+                    <li><a href="#">Topplistan</a></li>
+                    <li><a href="#">Rea</a></li>
+                    <li><a href="#">Kampanjer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <div class="product-image">
+                <img src="/<%= product.image %>" alt="<%= product.name %>">
+            </div>
+            <div class="product-info-details">
+                <h1><%= product.name %></h1>
+                <p class="brand"><%= product.brand %></p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="product-price"><%= product.price %></p> 
+                <button class="add-to-cart">Lägg i varukorg</button>
+            </div>
+        </section>
+
+        <section class="similar-products-details">
+            <h2>Liknande produkter</h2>
+            <div class="slideshow-container-details">
+                <button class="prev-details">&lt;</button>
+                <div class="product-slider-details">
+                    <% similarProducts.forEach(similarProduct => { %>
+                        <div class="product-card-details">
+                            <a href="/products/<%= similarProduct.slug %>">
+                                <img src="/<%= similarProduct.image %>" alt="<%= similarProduct.name %>">
+                            </a>
+                            <h3><%= similarProduct.name %></h3>
+                            <span class="brand"><%= similarProduct.brand %></span>
+                            <span class="price"><%= similarProduct.price %></span>
+                        </div>
+                    <% }); %>
+                </div>
+                <button class="next-details">&gt;</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <img src="/icons/planeticon.png" alt="Free shipping and returns">
+                <span>Gratis frakt och returer</span>
+            </div>
+            <div class="feature">
+                <img src="/icons/planeicon.png" alt="Express shipping">
+                <span>Expressfrakt</span>
+            </div>
+            <div class="feature">
+                <img src="/icons/protectionIcon.png" alt="Secure payments">
+                <span>Säkra betalningar</span>
+            </div>
+            <div class="feature">
+                <img src="/icons/smileyIcon.png" alt="Daily news">
+                <span>Nyheter varje dag</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <!-- Accordion mobile -->
+            <div class="accordion accordion-mobile" id="accordionFooter">
+                <!-- First Column -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="footer-accordion-1" class="accordion-toggle">
+                    <label for="footer-accordion-1" class="accordion-header">Shopping</label>
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Vinterjackor</li>
+                            <li>Pufferjackor</li>
+                            <li>Kappa</li>
+                            <li>Trenchcoats</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Second Column -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="footer-accordion-2" class="accordion-toggle">
+                    <label for="footer-accordion-2" class="accordion-header">Mina Sidor</label>
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Mina Ordrar</li>
+                            <li>Mitt Konto</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Third Column -->
+                <div class="accordion-item">
+                    <input type="checkbox" id="footer-accordion-3" class="accordion-toggle">
+                    <label for="footer-accordion-3" class="accordion-header">Kundtjänst</label>
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Returnpolicy</li>
+                            <li>Integritetspolicy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- footer content large device -->
+            <div class="footer-content-desktop">
+                <div class="footer-column">
+                    <h4>Shopping</h4>
+                    <ul>
+                        <li>Vinterjackor</li>
+                        <li>Pufferjackor</li>
+                        <li>Kappa</li>
+                        <li>Trenchcoats</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Mina Sidor</h4>
+                    <ul>
+                        <li>Mina Ordrar</li>
+                        <li>Mitt Konto</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Kundtjänst</h4>
+                    <ul>
+                        <li>Returnpolicy</li>
+                        <li>Integritetspolicy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © Freaky Fashion
+        </div>
+    </footer>
+</body>
+</html>

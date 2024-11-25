@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    height: 100vh;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.button-container {
+    margin-bottom: 20px;
+    float: right;
+    
+}
+
+button {
+    padding: 8px 16px;
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Extra stilar för new.html */
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: calc(100vh - 50px);
+}
+
+nav {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="number"] {
+    width: 20%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #999;
+}
+
+form input[type="text"] {
+    height: 35px;
+}
+
+form textarea {
+    height: 150px;
+    
+}
+
+fieldset {
+   width: 20%;
+}
+
+#image {
+    width: 20%;
+    margin-bottom: 15px;
+    border: 1px solid #999;
+    padding: 5px;
+    height: 35px;
+}
+
+button {
+    padding: 8px 15px;
+    border: 1px solid #333;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}

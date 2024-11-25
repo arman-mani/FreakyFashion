@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Produkter</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Administration</h1>
+    </div>
+    <div class="sidebar">
+        <h3>Produkter</h3>
+    </div>
+    <div class="main-content">
+        <h2>Produkter</h2>
+        <div class="button-container">
+            <button id="loadProducts">Ladda produkter</button>
+            <a href="/admin/products/new"><button id="newProduct">Ny produkt</button></a>
+        </div>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Namn</th>
+                    <th>SKU</th>
+                    <th>Pris</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Funktion för att ladda produkter till administrationssidan
+        async function loadProducts() {
+            try {
+                console.log('Försöker hämta produkter...');
+                const response = await fetch('/api/products');  // Uppdaterad URL
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const products = await response.json();
+                console.log('Hämtade produkter:', products);
+                displayProducts(products);
+            } catch (error) {
+                console.error('Fel vid hämtning av produkter:', error);
+                alert('Kunde inte ladda produkter: ' + error.message);
+            }
+        }
+
+        function displayProducts(products) {
+            const tableBody = document.getElementById('productTableBody');
+            tableBody.innerHTML = '';
+            
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.name}</td>
+                    <td>${product.sku}</td>
+                    <td>${product.price}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Lägg till event listener när sidan laddas
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadProductsButton = document.getElementById('loadProducts');
+            if (loadProductsButton) {
+                loadProductsButton.addEventListener('click', loadProducts);
+            }
+        });
+    </script>
+</body>
+</html>
