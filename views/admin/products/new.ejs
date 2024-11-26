@@ -45,6 +45,7 @@
         </main>
     </div>
     <script>
+        // event listener för att hantera formulärets inlämning
         document.addEventListener('DOMContentLoaded', () => {
             const newProductForm = document.getElementById('newProductForm');
             if (newProductForm) {
@@ -52,7 +53,7 @@
                     event.preventDefault();
 
                     const formData = new FormData(newProductForm);
-
+                    // formuläret skickas, skapas ett FormData-objekt och skickas till /api/products med en POST-förfrågan
                     try {
                         const response = await fetch('/api/products', {
                             method: 'POST',

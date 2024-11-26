@@ -35,6 +35,20 @@ button {
     margin-right: 10px;
 }
 
+.admin-buttons {
+    display: flex;
+    align-items: center; 
+}
+
+.admin-buttons button {
+    padding: 10px 20px;
+    margin-right: 15px;
+    background-color: #000000; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
 table {
     width: 100%;
     border-collapse: collapse;

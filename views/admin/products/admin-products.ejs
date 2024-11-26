@@ -15,7 +15,7 @@
     </div>
     <div class="main-content">
         <h2>Produkter</h2>
-        <div class="button-container">
+        <div class="button-container admin-buttons">
             <button id="loadProducts">Ladda produkter</button>
             <a href="/admin/products/new"><button id="newProduct">Ny produkt</button></a>
         </div>
@@ -33,7 +33,7 @@
         </table>
     </div>
     <script>
-        //  ladda produkter till administrationssidan
+        //  ladda produkter till administrationssidan från /api/products och visar dem i tabellen
         async function loadProducts() {
             try {
                 console.log('Försöker hämta produkter...');
@@ -51,7 +51,7 @@
                 alert('Kunde inte ladda produkter: ' + error.message);
             }
         }
-
+           // uppdaterar tabellen med produkternas data
         function displayProducts(products) {
             const tableBody = document.getElementById('productTableBody');
             tableBody.innerHTML = '';
@@ -67,7 +67,7 @@
             });
         }
 
-        // event listener när sidan laddas
+        // event listener för att ladda produkterna när knappen klickas.
         document.addEventListener('DOMContentLoaded', () => {
             const loadProductsButton = document.getElementById('loadProducts');
             if (loadProductsButton) {
