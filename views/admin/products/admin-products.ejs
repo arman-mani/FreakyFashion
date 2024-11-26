@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration - Produkter</title>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
     <div class="header">
@@ -28,11 +28,12 @@
                 </tr>
             </thead>
             <tbody id="productTableBody">
+                <!-- Initialt tom -->
             </tbody>
         </table>
     </div>
     <script>
-        // Funktion för att ladda produkter till administrationssidan
+        //  ladda produkter till administrationssidan
         async function loadProducts() {
             try {
                 console.log('Försöker hämta produkter...');
@@ -66,7 +67,7 @@
             });
         }
 
-        // Lägg till event listener när sidan laddas
+        // event listener när sidan laddas
         document.addEventListener('DOMContentLoaded', () => {
             const loadProductsButton = document.getElementById('loadProducts');
             if (loadProductsButton) {

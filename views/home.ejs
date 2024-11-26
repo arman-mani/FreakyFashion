@@ -56,21 +56,21 @@
                 <p>Fin stil</p>
             </a>
         </section>
-        <h2 class="product-grid-title">Våra Produkter</h2>
+        <h2 class="product-grid-title">Populära Produkter</h2>
         <section class="product-grid" id="product-grid">
-            <% products.forEach(product => { %>
-                <a href="/products/<%= product.slug %>" class="product-card">
-                    <img src="<%= product.image %>" alt="<%= product.name %>">
-                    <div class="product-info">
-                        <div style="display: flex; width: 100%;">
-                            <h3><%= product.name %></h3>
-                            <span class="price"><%= product.price %></span>
-                        </div>
-                        <span class="brand">Levis</span>
-                    </div>
-                </a>
-            <% }); %>
-        </section>
+          <% products.forEach(product => { %>
+              <a href="/products/<%= product.slug %>" class="product-card">
+                  <img src="/<%= product.image %>" alt="<%= product.name %>">
+                  <div class="product-info">
+                      <div style="display: flex; width: 100%;">
+                          <h3><%= product.name %></h3>
+                          <span class="price"><%= product.price %></span>
+                      </div>
+                      <span class="brand"><%= product.brand %></span>
+                  </div>
+              </a>
+          <% }); %>
+      </section>
         <section class="features">
             <div class="feature">
                 <img src="/icons/planeticon.png" alt="Free shipping and returns">
@@ -160,29 +160,6 @@
               © Freaky Fashion
             </div>
           </footer>
-          </main>
-    <script>
-        // Fetch products from the server and add them to the product section
-        fetch('/products')
-            .then(response => response.json())
-            .then(products => {
-                const productGrid = document.getElementById('product-grid');
-                products.forEach(product => {
-                    const productCard = document.createElement('a');
-                    productCard.className = 'product-card';
-                    productCard.href = `/products/${product.slug}`;
-                    productCard.innerHTML = `
-                        <img src="${product.image}" alt="${product.name}">
-                        <div class="product-info">
-                            <span class="product-name">${product.name}</span>
-                            <span class="product-price">${product.price}</span>
-                        </div>
-                        <span class="brand">${product.brand}</span>
-                        <img src="/icons/emptyheart.jpg" alt="Favorite" class="heart-icon">
-                    `;
-                    productGrid.appendChild(productCard);
-                });
-            });
-    </script>
+    </main>
 </body>
 </html>
