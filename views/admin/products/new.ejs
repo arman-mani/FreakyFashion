@@ -48,12 +48,13 @@
         // event listener för att hantera formulärets inlämning
         document.addEventListener('DOMContentLoaded', () => {
             const newProductForm = document.getElementById('newProductForm');
+            // när nån submittar formuläret, skickas en POST-förfrågan till /api/products
             if (newProductForm) {
                 newProductForm.addEventListener('submit', async (event) => {
                     event.preventDefault();
-
+                    // skickar alla form-data till api:et
                     const formData = new FormData(newProductForm);
-                    // formuläret skickas, skapas ett FormData-objekt och skickas till /api/products med en POST-förfrågan
+                    
                     try {
                         const response = await fetch('/api/products', {
                             method: 'POST',
@@ -66,8 +67,10 @@
 
                         const result = await response.json();
                         console.log('Produkt tillagd:', result);
+                        // om allt går bra, tillbaka till produkt-listan
                         window.location.href = '/admin/products';
                     } catch (error) {
+                        // annars visa fel
                         console.error('Fel vid tillägg av produkt:', error);
                         alert('Kunde inte lägga till produkt: ' + error.message);
                     }

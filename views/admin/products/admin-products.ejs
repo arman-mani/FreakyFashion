@@ -33,9 +33,10 @@
         </table>
     </div>
     <script>
-        //  ladda produkter till administrationssidan från /api/products och visar dem i tabellen
+        //  funktion som hämtar alla produkter från API:et
         async function loadProducts() {
             try {
+                // försöker hämta produkterna från API:et
                 console.log('Försöker hämta produkter...');
                 const response = await fetch('/api/products');  // Uppdaterad URL
 
@@ -51,11 +52,11 @@
                 alert('Kunde inte ladda produkter: ' + error.message);
             }
         }
-           // uppdaterar tabellen med produkternas data
+           // funktioner som visar produkterna i en tabell
         function displayProducts(products) {
             const tableBody = document.getElementById('productTableBody');
             tableBody.innerHTML = '';
-            
+            // loopar igenom och lägger till varje produkt i tabellen
             products.forEach(product => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
@@ -67,7 +68,7 @@
             });
         }
 
-        // event listener för att ladda produkterna när knappen klickas.
+        // event listener för att ladda produkterna när knappen klickas
         document.addEventListener('DOMContentLoaded', () => {
             const loadProductsButton = document.getElementById('loadProducts');
             if (loadProductsButton) {
