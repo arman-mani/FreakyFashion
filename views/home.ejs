@@ -58,7 +58,9 @@
         </section>
         <h2 class="product-grid-title">Populära Produkter</h2>
         <section class="product-grid" id="product-grid">
+          <!-- loopa igenom alla produkter som skickats från servern -->
           <% products.forEach(product => { %>
+             <!-- länk till produktsidan, använder produktens slug i url:en -->
               <a href="/products/<%= product.slug %>" class="product-card">
                   <img src="/<%= product.image %>" alt="<%= product.name %>">
                   <div class="product-info">

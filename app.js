@@ -47,7 +47,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Något gick fel på servern');
 });
 
-// Start server
+// Starta server
 app.listen(PORT, () => {
     console.log(`Servern körs på http://localhost:${PORT}`);
     console.log(`API-endpoint tillgänglig på http://localhost:${PORT}/api/products`);
